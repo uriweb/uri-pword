@@ -12,9 +12,14 @@
 	var confpwmatch = document.getElementById('confpwmatch');
 
 
-	var newpw, confpw, strong = false, match = false;
+	var newpw, confpw, strong, match;
 
 
+	/**
+	 * Sets up event listeners.
+	 * left the existing events in place
+	 * @return bool
+	 */
 	function initPasswordChecker() {
 
 		checkPassword();
@@ -31,6 +36,10 @@
 
 	}
 	
+	/**
+	 * Tests if the new password and password confirmation match.
+	 * @return bool
+	 */
 	function passwordsMatch() {
 		if ( newpw && confpw && newpw == confpw ) {
 			return true;
@@ -40,15 +49,26 @@
 	}
 
 
+	/**
+	 * Returns a text string associated with a score from 0-4
+	 * @param int s is a number from 0-4 indicating password strength
+	 * @return str
+	 */
 	function getScoreText(s) {
 		var scores = ['Weak ☹️', 'Weak 🙁', 'Fair 😕', 'Strong 😀', 'Very Strong 💯'];
 		if( s >= 0 && s < scores.length) {
-			return s + ' ' + scores[s];
+			return scores[s];
 		} else {
 			return scores[0];
 		}
 	}
 
+	/**
+	 * Tests the new password against a few regexes to satisfy URI's requirements
+	 * NB: As of 2019-02, URI requires that any three of the four patterns match
+	 * returns the number of tests passed
+	 * @return int
+	 */
 	function testPassword() {
 		var passed = 0;
 		var tests = [/[a-z]+/g, /[A-Z]+/g, /[0-9]+/g, /[\!\@\#\$\%\^\&\*\(\)\_\-\+\=]+/g];
@@ -60,6 +80,10 @@
 		return passed;
 	}
 
+	/**
+	 * Displays the matching text.
+	 * whether or not the password matches
+	 */
 	function displayMatchMessage() {
 		if (confpw) {
 			if (match) {
@@ -72,6 +96,13 @@
 		}
 	}
 
+	/**
+	 * Displays the password's strength.
+	 * displays a message in text as well as changes a className
+	 * @param int score is the passwords 0-4 score
+	 * @param bool isStrong indicates whether or not the password is acceptable to URI
+	 * @return int
+	 */
 	function displayStrength(score, isStrong) {
 		// cap score at 2 is URI conditions are not met
 		if ( ! isStrong && score > 2) {
@@ -82,7 +113,10 @@
 	}
 
 
-	function setSubmitStatus(strong, match) {
+	/**
+	 * Sets the status of the submit button from disabled to enabled and back
+	 */
+	function setSubmitStatus() {
 		var b = document.getElementById('submitbutton');
 	
 		if ( strong && match ) { 
@@ -95,6 +129,12 @@
 	}
 
 
+	/**
+	 * Displays feedback text to encourage a stronger password
+	 * @param obj ret is the zxcvbn object
+	 * @param bool testsPassed indicates the number of URI tests passed
+	 * @return int
+	 */
 	function displayFeedback(ret, testsPassed) {
 		pwfeedback.innerHTML = '';
 
@@ -117,6 +157,9 @@
 		}
 	}
 
+	/**
+	 * Clears password messages, status, and suggestions.
+	 */
 	function clearMessages() {
 		pwscore.innerHTML = '';
 		pwscorediv.className = '';
@@ -124,6 +167,9 @@
 	}
 
 
+	/**
+	 * Checks the new password and displays appropriate messages.
+	 */
 	function checkPassword() {
 
 		newpw = document.getElementById('newpw').value;
@@ -133,17 +179,16 @@
 			
 			var ret = zxcvbn( newpw );
 			var testsPassed = testPassword();
+			
+			// re-calculate these every time
+			match = false;
+			strong = false;
 
 			match = passwordsMatch();
-
-			if( testsPassed >= 4 && ret.score > 3) {
+			
+			if( testsPassed >= 3 && ret.score > 3) {
 				strong = true;
 			}
-	
-			// see if we achieve very strong status
-// 			if( strong && /.{8}/.test(pwd) ) {
-// 				 testsPassed++;
-// 			}
 	
 			displayStrength( ret.score, strong );
 			displayFeedback( ret, testsPassed );

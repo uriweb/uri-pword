@@ -176,7 +176,7 @@ function send_to_server($fields)
 		</header>
 
 		<p class="fullwidth type-intro">Authentication at URI is changing.</p>
-		<p>This form changes your password for all of the following systems to the same password: Sakai, Wifi, Office 365, Wordpress, Gmail, Google Drive, Google Apps, Active Directory, Jabber and VoIP pages, and Network Shares. <strong>This page does not change for e-Campus password.</strong></p>
+		<p>This form changes your password for all of the following systems to the same password: Sakai, Wifi, Office 365, Wordpress, Gmail, Google Drive, Google Apps, Active Directory, Jabber and VoIP pages, and Network Shares. <strong>This page does not change your e-Campus password.</strong></p>
 
 <hr>
 
