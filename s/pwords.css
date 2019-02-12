@@ -2,6 +2,8 @@
 	text-shadow: 1px 1px 2px #002147; 
 }
 
+/* FORM STYLES */
+
 #pword-form {
 	width: 100%;
 	position: relative;
@@ -10,6 +12,7 @@
 	background: #fff;
 	border-bottom: 1px solid #eee;
 	margin: 0 auto 3rem;
+	padding: 2rem 0 0;
 }
 
 #pword-form h1 {
@@ -29,12 +32,12 @@
 	font-size: 1.2rem;
 }
 
-form img {
+#pword-form img {
 	width: 100%;
 	height: auto;
 }
 
-form .form-slider {
+#pword-form .form-slider {
 	position: relative;
 	white-space: nowrap;
 	list-style: none;
@@ -44,11 +47,11 @@ form .form-slider {
 	transition: transform .2s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-form.next .form-slider {
+#pword-form.next .form-slider {
 	transform: translateX( -100% );
 }
 
-form .input-group {
+#pword-form fieldset {
 	display: block;
 	white-space: initial;
 	box-sizing: border-box;
@@ -59,17 +62,17 @@ form .input-group {
 	margin: 0;
 }
 
-form .input-group:after {
+#pword-form fieldset:after {
 	display: block;
 	content: '';
 	clear: both;
 }
 
-form.has-js .input-group {
+#pword-form.has-js fieldset {
 	display: inline-block;
 }
 
-form.has-js .form-nav {
+#pword-form.has-js .form-nav {
 	display: block;
 	margin: 1rem 0 0;
 	padding: 1rem 2rem;
@@ -88,39 +91,39 @@ form.has-js .form-nav {
 	text-shadow: none;
 }
 
-form .form-nav {
+#pword-form .form-nav {
 	display: none;
 }
 
-form .form-nav:hover,
-form .form-nav:focus {
+#pword-form .form-nav:hover,
+#pword-form .form-nav:focus {
 	background: #eee;
 	cursor: pointer;
 }
 
-form #pword-next {
+#pword-form #pword-next {
 	float: right;
 }
 
-form #pword-previous {
+#pword-form #pword-previous {
 	float: left;
 }
 
-form #pword-submit {
+#pword-form #pword-submit {
 	float: right ;
 	margin: 1rem 0 0;
 }
 
-form label {
+#pword-form label {
 	max-width: initial !important;
 }
 
-form h3 {
+#pword-form h3 {
 	color: #555;
 	font-size: 1rem;
 }
 
-form .form-help {
+#pword-form .form-help {
 	background: #f1f1f1;
 	border-top: 1px solid #eee;
 	padding: 2rem 1.5rem 1px;
@@ -137,11 +140,13 @@ form .form-help {
 		border: 1px solid #eee;
 		border-radius: 3px;
 	}
-	form .input-group {
+	#pword-form fieldset {
 		padding: 2rem 4rem;
 	}
 }
 
+
+/* VALIDATION */
 
 div.error { border: 3px solid #900; background-color: #fdd; color: #600; padding: 0.25em; margin: 1em; }
 div.success { border: 3px solid #090; background-color: #dfd; color: #060; padding: 0.25em; margin: 1em; }
