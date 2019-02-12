@@ -172,23 +172,30 @@ div#pwscorediv, #confpwmatch {
 }
 
 div#pwscorediv {
-	border: 1px solid #666;
-	padding: .5em 1em;
+	margin-top: 1em;
+	padding: .5rem 0 0;
 }
 div#pwscorediv.pwscore0 {
-	background: #fefada;
+	background: #ffd453;
 }
 div#pwscorediv.pwscore1 {
-	background: linear-gradient(to right, #fefada 0%,#fefada 30%,#ffffff 30%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: linear-gradient(to right, #002147 0%,#002147 30%,#ffd453 30%,#ffd453 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 div#pwscorediv.pwscore2 {
-	background: linear-gradient(to right, #fefada 0%,#fefada 50%,#ffffff 50%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: linear-gradient(to right, #002147 0%,#002147 50%,#ffd453 50%,#ffd453 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 div#pwscorediv.pwscore3 {
-	background: linear-gradient(to right, #c0ddf2 0%,#c0ddf2 75%,#ffffff 75%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: linear-gradient(to right, #002147 0%,#002147 75%,#ffd453 75%,#ffd453 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 div#pwscorediv.pwscore4 {
-	background: #c0ddf2;
+	background: #002147;
+}
+
+#pwscore {
+	background-color: #fff;
+	display: block;
+	margin: 0;
+	padding: 1em;
 }
 
 
