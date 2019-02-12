@@ -147,16 +147,99 @@
 
 /* SELF SERVICE */
 
-.form-row {
-	padding: 2rem 0;
+#passwordform legend {
+	margin-bottom: 2rem;
 }
 
+.form-row {
+	margin-bottom: 2rem;
+}
+
+.form-description {
+	font-size: .9rem;
+	padding-top: .5rem;
+	color: #555;
+}
+
+.popup {
+	position: relative;
+}
+
+.popup-trigger {
+	font-weight: bold;
+}
+
+#pword-reqs.has-js .popup-trigger {
+	display: inline-block;
+	clear: both;
+	font-weight: normal;
+	font-size: .9rem;
+	color: #005eff;
+}
+
+#pword-reqs.has-js .popup-trigger:hover {
+	cursor: pointer;
+}
+
+#pword-reqs.has-js.open .popup-container {
+	display: block;
+}
+
+#pword-reqs.has-js .popup-container {
+	display: none;
+	font-size: 1rem;
+	position: absolute;
+	bottom: 4.5rem;
+	left: 0;
+	background: #fff;
+	padding: 1rem;
+	box-shadow: 0 1rem 3rem rgba(0,0,0,.1);
+	border: 1px solid #ddd;
+	border-radius: .2rem;
+	max-width: 400px;
+}
+
+#pword-reqs.has-js .popup-container:after {
+	display: block;
+	position: absolute;
+	left: 2rem;
+	bottom: -11px;
+	content: '';
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-color: #ddd;
+	border-style: solid;
+	border-width: 0 0 1px 1px;
+	border-bottom-left-radius: .2rem;
+	transform: rotate(-45deg);
+}
+
+#pword-reqs.has-js ul {
+	margin: 0 0 1rem 1.5rem;
+}
 
 /* VALIDATION */
 
-div.error { border: 3px solid #900; background-color: #fdd; color: #600; padding: 0.25em; margin: 1em; }
-div.success { border: 3px solid #090; background-color: #dfd; color: #060; padding: 0.25em; margin: 1em; }
-div.none { display: none; }
+div.error { 
+	border: 3px solid #900; 
+	background-color: #fdd; 
+	color: #600; 
+	padding: 0.25em; 
+	margin: 1em;
+}
+
+div.success { 
+	border: 3px solid #090; 
+	background-color: #dfd; 
+	color: #060;
+	padding: 0.25em;
+	margin: 1em;
+}
+
+div.none { 
+	display: none;
+}
 
 div#pwscorediv, #confpwmatch {
 	display: block;
@@ -174,34 +257,35 @@ div#pwscorediv, #confpwmatch {
 div#pwscorediv {
 	margin-top: 1em;
 	padding: .5rem 0 0;
+	max-width: 400px;
 }
 div#pwscorediv.pwscore0 {
-	background: #ffd453;
+	background: #eee;
 }
 div#pwscorediv.pwscore1 {
-	background: linear-gradient(to right, #002147 0%,#002147 30%,#ffd453 30%,#ffd453 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: linear-gradient(to right, #ff3a3a 0%,#ff3a3a 30%,#eee 30%,#eee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 div#pwscorediv.pwscore2 {
-	background: linear-gradient(to right, #002147 0%,#002147 50%,#ffd453 50%,#ffd453 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: linear-gradient(to right, #ffac3a 0%,#ffac3a 50%,#eee 50%,#eee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 div#pwscorediv.pwscore3 {
-	background: linear-gradient(to right, #002147 0%,#002147 75%,#ffd453 75%,#ffd453 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: linear-gradient(to right, #9ed92e 0%,#9ed92e 75%,#eee 75%,#eee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 div#pwscorediv.pwscore4 {
-	background: #002147;
+	background: #1dd60e;
 }
 
 #pwscore {
 	background-color: #fff;
 	display: block;
 	margin: 0;
-	padding: 1em;
+	padding: 1rem 0;
 }
 
 
 .feedback {
-	padding: 1rem 2rem;
-	border; 1px solid #999;
+	font-size: .9rem;
+	padding: 1rem 0;
 }
 
 .yes {

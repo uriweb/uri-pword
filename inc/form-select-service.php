@@ -42,6 +42,6 @@
 	
 	</article>
 
-	<script type="text/javascript" src="<?php print $base_path; ?>j/pwords.js"></script>
+	<script type="text/javascript" src="<?php print $base_path; ?>j/select-service.js"></script>
 					
 <!-- ================================ END PAGE CONTENT ================================ -->	

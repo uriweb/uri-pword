@@ -201,15 +201,15 @@ function send_to_server($fields)
 		<legend>Enter your URI Credentials</legend>
 
 		<div class="form-row">
-			<label for="user">Your URI Email Address</label>
+			<label for="user">Your URI Email Address:</label>
 			<input type="text" id="user" name="user" placeholder="sample@uri.edu" size="40" maxlength="64" <?php echo $user_value; ?> />
 			<div class="form-description">
-				Enter your full URI email address. example: example@uri.edu or example@my.uri.edu
+				Enter your full URI email address (e.g. sample@uri.edu or sample@my.uri.edu)
 			</div>
 		</div>
 
 		<div class="form-row">
-			<label for="currpw">Enter Current Password</label>
+			<label for="currpw">Enter Current Password:</label>
 			<input type="password" id="currpw" name="currpw" size="33" maxlength="32" <?php echo $currpw_value; ?> />
 			<div class="form-description">
 				Note: if you have not yet unified your passwords, enter your Sakai/Wifi/LDAP password here.
@@ -221,34 +221,38 @@ function send_to_server($fields)
 	<fieldset>
 		<legend>Choose a New Password</legend>
 		
-		<p>Passwords must include at least: 
-			<ul>
-				<li>one uppercase letter,</li>
-				<li>one lowercase letter,</li>
-				<li>one numeral,</li>
-				<li>one special character, e.g. ! @ # $ % ^ & * ( ) - _ = +</li>
-			</ul>
-			<a href='https://security.uri.edu/information-security-awareness/tipsforpasswords/' target='_blank'>Tips from the Office of Information Security</a></p>
-
-
+		<div class="popup" id="pword-reqs">
+			<div class="popup-trigger">
+				<p>Password Requirements</p>
+			</div>
+			<div class="popup-container">
+				<ul>
+					<li>one uppercase letter</li>
+					<li>one lowercase letter</li>
+					<li>one numeral</li>
+					<li>one special character, e.g. ! @ # $ % ^ & * ( ) - _ = +</li>
+				</ul>
+				<p><strong>Longer passwords</strong> are better (up to 32 characters), and strength must be <strong>"Strong" or better</strong></p>
+				<a href='https://security.uri.edu/information-security-awareness/tipsforpasswords/' target='_blank'>Tips from the Office of Information Security</a>
+			</div>
+		</div>
+		
 		<div class="form-row">
-			<label for="newpw">Choose A New Password</label>
+			<label for="newpw">Choose A New Password:</label>
 			<input type="password" id='newpw' name="newpw" size="33" maxlength="32" <?php echo $newpw_value; ?> />
 			<div class="form-description"></div>
-			<div className="feedback score">
-				<!--h2>Feedback</h2-->
+			<div class="feedback score">
 				<div id='pwscorediv'>
 					<span id='pwscore'></span>
 				</div>
-				<p><strong>Longer passwords are better</strong> (up to 32 characters) Strength must be <strong>"Strong" or better</strong></p>
 				<p class='pwfeedback' id='pwfeedback'></p>
 			</div>
 		</div>
 		<div class="form-row">
-			<label for="confpw">Enter Your New Password Again</label>
+			<label for="confpw">Enter Your New Password Again:</label>
 			<input type="password" id='confpw' name="confpw" size="33" maxlength="32" <?php echo $confpw_value; ?> />
 			<div class="form-description"></div>
-			<div className="feedback match">
+			<div class="feedback match">
 			<span id='confpwmatch'></span>
 			</div>
 		</div>
@@ -270,6 +274,7 @@ function send_to_server($fields)
 
 <script type="text/javascript" src="<?php print $base_path; ?>j/zxcvbn.js"></script>
 <script type="text/javascript" src="<?php print $base_path; ?>j/password-tester.js"></script>
+<script type="text/javascript" src="<?php print $base_path; ?>j/popup.js"></script>
 
 
 <?php
