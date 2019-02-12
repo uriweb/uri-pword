@@ -233,11 +233,7 @@ function send_to_server($fields)
 
 		<div class="form-row">
 			<label for="newpw">Choose A New Password</label>
-			<input type="password" id='newpw' name="newpw" size="33" maxlength="32" <?php echo $newpw_value; ?> 
-				onchange="checkPassword(document.getElementById('newpw').value, false);"
-				onkeypress="this.onchange();"
-				oninput="this.onkeypress();"
-			/>
+			<input type="password" id='newpw' name="newpw" size="33" maxlength="32" <?php echo $newpw_value; ?> />
 			<div class="form-description"></div>
 			<div className="feedback score">
 				<!--h2>Feedback</h2-->
@@ -250,11 +246,7 @@ function send_to_server($fields)
 		</div>
 		<div class="form-row">
 			<label for="confpw">Enter Your New Password Again</label>
-			<input type="password" id='confpw' name="confpw" size="33" maxlength="32" <?php echo $confpw_value; ?>
-				onchange="checkPassword(document.getElementById('newpw').value, false);"
-				onkeypress="this.onchange();"
-				oninput="this.onkeypress();"
-			/>
+			<input type="password" id='confpw' name="confpw" size="33" maxlength="32" <?php echo $confpw_value; ?> />
 			<div class="form-description"></div>
 			<div className="feedback match">
 			<span id='confpwmatch'></span>
@@ -277,131 +269,7 @@ function send_to_server($fields)
 
 
 <script type="text/javascript" src="<?php print $base_path; ?>j/zxcvbn.js"></script>
-<script>
-
-function getScoreText(s) {
-	var scores = ['Weak ☹️', 'Weak 🙁', 'Fair 😕', 'Strong 😀', 'Very Strong 💯'];
-	if( s >= 0 && s < scores.length) {
-		return scores[s];
-	} else {
-		return scores[0];
-	}
-}
-
-function testPassword(pwd) {
-	var passed = 0;
-	var tests = [/[a-z]+/g, /[A-Z]+/g, /[0-9]+/g, /[\!\@\#\$\%\^\&\*\(\)\_\-\+\=]+/g];
-	for (var i=0; i<tests.length; i++) {
-		if ( tests[i].test(pwd) ) {
-			 passed++;
-		}
-	}
-	return passed;
-}
-
-function displayMatchMessage(match, confpw) {
-	var confpwmatch = document.getElementById('confpwmatch');
-	if (confpw) {
-		if (match) {
-			confpwmatch.innerHTML = '<strong class="yes">Passwords Match</strong>';
-		} else {
-			confpwmatch.innerHTML = '<strong class="no">Passwords do not match</strong>';
-		}
-	} else { 
-		confpwmatch.innerHTML = ''; 
-	}
-}
-
-function displayStrength(score, isStrong) {
-	var pwscore = document.getElementById('pwscore');
-	var pwscorediv = document.getElementById('pwscorediv');
-	// cap score at 2 is URI conditions are not met
-	if ( ! isStrong && score > 2) {
-		score = 2;
-	}
-	pwscore.innerHTML = "Strength: <strong>" + getScoreText( score ) + "</strong>";
-	pwscorediv.className = 'pwscore pwscore' + ( score );
-}
-
-
-function setSubmitStatus(strong, match) {
-	var b = document.getElementById('submitbutton');
-	
-	if ( strong && match ) { 
-		b.disabled = false;
-		b.className = 'pass';
-	} else {
-		b.disabled = true;
-		b.className = 'fail';
-	}
-}
-
-
-function displayFeedback(ret, testsPassed) {
-	var pwfeedback = document.getElementById('pwfeedback');
-	pwfeedback.innerHTML = '';
-
-	if (ret.feedback.warning) pwfeedback.innerHTML += ret.feedback.warning + '. ';
-
-	var temp = '' + ret.feedback.suggestions;
-	temp = temp.replace('.,', '. ');
-	
-	if (temp && temp.slice(-1) != '.') {
-		temp += '. ';
-	}
-	if (temp && temp.slice(-1) == '.') {
-		temp += ' ';
-	}
-	if (ret.feedback.suggestions) {
-		pwfeedback.innerHTML += temp;
-	}
-	if (testsPassed < 3) {
-		pwfeedback.innerHTML += '<strong>Must have at least 3 out 4 of: lowercase, uppercase, digits, and special characters.</strong>';
-	}
-}
-
-function clearMessages() {
-	document.getElementById('pwscore').innerHTML = '';
-	document.getElementById('pwscorediv').className = '';
-	document.getElementById('pwfeedback').innerHTML  = '';
-}
-
-
-function checkPassword(pwd) {
-
-	if (pwd != '') {
-		var ret = zxcvbn(pwd);
-		var testsPassed = testPassword(pwd);
-		var newpw = document.getElementById('newpw').value;
-		var confpw = document.getElementById('confpw').value;
-		var match = (newpw == confpw);
-		var strong = false;
-
-		//console.log(ret);
-	
-		if( testsPassed >= 4 && ret.score > 3) {
-			strong = true;
-		}
-	
-		// see if we achieve very strong status
-		if( strong && /.{8}/.test(pwd) ) {
-			 testsPassed++;
-		}
-	
-		displayStrength( ret.score, strong );
-		displayFeedback( ret, testsPassed );
-		displayMatchMessage( match, confpw );
-		setSubmitStatus( strong, match );
-	
-	
-	} else {
-		clearMessages();
-	}
-
-}
-
-checkPassword( document.getElementById('newpw').value );
-</script>
+<script type="text/javascript" src="<?php print $base_path; ?>j/password-tester.js"></script>
 
 
 <?php
