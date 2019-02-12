@@ -2,7 +2,7 @@
 	text-shadow: 1px 1px 2px #002147; 
 }
 
-/* FORM STYLES */
+/* SELECT FORM STYLES */
 
 #pword-form {
 	width: 100%;
@@ -143,6 +143,12 @@
 	#pword-form fieldset {
 		padding: 2rem 4rem;
 	}
+}
+
+/* SELF SERVICE */
+
+.form-row {
+	padding: 2rem 0;
 }
 
 

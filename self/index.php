@@ -196,7 +196,7 @@ function send_to_server($fields)
 
 <?php } else { ?>
 
-<form id='passwordform' method="post" enctype="multipart/form-data" onkeypress="return event.keyCode != 13;">
+<form class="modern-form" id='passwordform' method="post" enctype="multipart/form-data" onkeypress="return event.keyCode != 13;">
 	<fieldset>
 		<legend>Enter your URI Credentials</legend>
 
