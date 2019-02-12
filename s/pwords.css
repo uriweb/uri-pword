@@ -147,12 +147,19 @@
 
 /* SELF SERVICE */
 
-#passwordform legend {
+.form-row {
 	margin-bottom: 2rem;
 }
 
-.form-row {
-	margin-bottom: 2rem;
+#passwordform {
+	max-width: 600px;
+	padding-bottom: 0;
+}
+
+@media screen and (min-width: 600px) {
+	#passwordform {
+		margin: 0 auto;
+	}
 }
 
 .form-description {
@@ -193,8 +200,8 @@
 	left: 0;
 	background: #fff;
 	padding: 1rem;
-	box-shadow: 0 1rem 3rem rgba(0,0,0,.1);
 	border: 1px solid #ddd;
+	box-shadow: 0 1rem 3rem rgba(0,0,0,.1);
 	border-radius: .2rem;
 	max-width: 400px;
 }
@@ -209,8 +216,8 @@
 	height: 20px;
 	background: #fff;
 	border-color: #ddd;
-	border-style: solid;
 	border-width: 0 0 1px 1px;
+	border-style: solid;
 	border-bottom-left-radius: .2rem;
 	transform: rotate(-45deg);
 }
@@ -241,7 +248,7 @@ div.none {
 	display: none;
 }
 
-div#pwscorediv, #confpwmatch {
+#confpwmatch {
 	display: block;
 	margin-bottom: 1em;
 	padding: .5em;
@@ -254,22 +261,17 @@ div#pwscorediv, #confpwmatch {
 	color: #000;
 }
 
-div#pwscorediv {
-	margin-top: 1em;
-	padding: .5rem 0 0;
-	max-width: 400px;
-}
 div#pwscorediv.pwscore0 {
-	background: #eee;
+	background: #ddd;
 }
 div#pwscorediv.pwscore1 {
-	background: linear-gradient(to right, #ff3a3a 0%,#ff3a3a 30%,#eee 30%,#eee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: linear-gradient(to right, #ff3a3a 0%,#ff3a3a 30%,#ddd 30%,#ddd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 div#pwscorediv.pwscore2 {
-	background: linear-gradient(to right, #ffac3a 0%,#ffac3a 50%,#eee 50%,#eee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: linear-gradient(to right, #ffac3a 0%,#ffac3a 50%,#ddd 50%,#ddd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 div#pwscorediv.pwscore3 {
-	background: linear-gradient(to right, #9ed92e 0%,#9ed92e 75%,#eee 75%,#eee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: linear-gradient(to right, #9ed92e 0%,#9ed92e 75%,#ddd 75%,#ddd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 div#pwscorediv.pwscore4 {
 	background: #1dd60e;
@@ -282,10 +284,76 @@ div#pwscorediv.pwscore4 {
 	padding: 1rem 0;
 }
 
-
 .feedback {
 	font-size: .9rem;
 	padding: 1rem 0;
+}
+
+.feedback.score {
+	position: absolute;
+	width: 100%;
+	top: 9rem;
+	left: 0;
+	z-index: 10;
+	padding: 0;
+	box-shadow: 0 1rem 3rem rgba(0,0,0,.1);
+}
+
+#pwscorediv, #pwfeedback {
+	display: none;
+}
+
+#pwscorediv {
+	padding-top: 1rem;
+	border-radius: .2rem .2rem 0 0;
+	border-width: 0 1px 0;
+	border-style: solid;
+	border-color: #ddd;
+}
+
+#pwscorediv:before {
+	display: block;
+	position: absolute;
+	left: 2rem;
+	top: -10px;
+	content: '';
+	width: 20px;
+	height: 20px;
+	background: #ddd;
+	border-top-right-radius: .2rem;
+	transform: rotate(-45deg);
+}
+
+#pwscorediv.pwscore1:before {
+	background: #ff3a3a;
+}
+#pwscorediv.pwscore2:before {
+	background: #ffac3a;
+}
+#pwscorediv.pwscore3:before {
+	background: #9ed92e;
+}
+#pwscorediv.pwscore4:before {
+	background: #1dd60e;
+}
+
+#pwscorediv span {
+	padding: 1rem;
+}
+
+#pwfeedback {
+	background: #fff;
+	padding: 0 1rem 1rem;
+	border-radius: 0 0 .2rem .2rem;
+	border-width: 0 1px 1px;
+	border-style: solid;
+	border-color: #ddd;
+	margin: 0;
+}
+
+#newpw:focus ~ .feedback.score #pwscorediv.pwscore,
+#newpw:focus ~ .feedback.score #pwscorediv.pwscore ~ #pwfeedback {
+	display: block;
 }
 
 .yes {
@@ -296,11 +364,39 @@ div#pwscorediv.pwscore4 {
 }
 
 
-input#submitbutton { font-family: Lato; font-size: 14pt; margin: 0.5em; visibility: visible; }
-input#submitbutton.pass { background-color: #cfc; }
-input#submitbutton.fail { background-color: #fcc; }
-div#help_contact { font-size: 90%; font-weight: bold; color: #000; }
-a:hover, a:visited, a { color: #07f; }
+input#submitbutton { 
+	display: inline-block;
+	margin: 0 .5rem;
+	padding: 1rem 2rem;
+	border: 1px solid #ddd;
+	font-size: .7rem;
+	font-weight: 600;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	text-align: center;
+	color: #999;
+	text-decoration: none;
+	border-radius: .2rem;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	border: 1px solid #ddd;
+	text-shadow: none;
+}
+input#submitbutton.pass { 
+	background-color: #005eff;
+	border: 1px solid #005eff;
+	color: #fff;
+}
+input#submitbutton.fail { 
+	background-color: transparent;
+	border: 1px solid #ddd;
+	color: #999;
+}
+div#help_contact { 
+	font-size: 90%; 
+	font-weight: bold; 
+	color: #000;
+}
 
 
 #start-over {
