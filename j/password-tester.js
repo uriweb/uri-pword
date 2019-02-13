@@ -22,6 +22,7 @@
 	 */
 	function initPasswordChecker() {
 
+		setSubmitStatus();
 		checkPassword();
 		
 		var np = document.getElementById('newpw');
