@@ -148,6 +148,7 @@
 /* SELF SERVICE */
 
 .form-row {
+	position: relative;
 	margin-bottom: 2rem;
 }
 
@@ -160,6 +161,15 @@
 	#passwordform {
 		margin: 0 auto;
 	}
+}
+
+#passwordform a {
+	text-decoration: underline;
+}
+
+#passwordform legend {
+	background: #555;
+	padding: .5rem .8rem .4rem;
 }
 
 .form-description {
@@ -182,6 +192,7 @@
 	font-weight: normal;
 	font-size: .9rem;
 	color: #005eff;
+	text-decoration: underline;
 }
 
 #pword-reqs.has-js .popup-trigger:hover {
@@ -290,13 +301,11 @@ div#pwscorediv.pwscore4 {
 }
 
 .feedback.score {
-	position: absolute;
+	position: relative;
+	top: .5rem;
 	width: 100%;
-	top: 9rem;
-	left: 0;
 	z-index: 10;
 	padding: 0;
-	box-shadow: 0 1rem 3rem rgba(0,0,0,.1);
 }
 
 #pwscorediv, #pwfeedback {
