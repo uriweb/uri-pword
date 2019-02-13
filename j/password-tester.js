@@ -8,6 +8,7 @@
 
 	var pwscore = document.getElementById('pwscore');
 	var pwscorediv = document.getElementById('pwscorediv');
+	var pwscoredivParent = pwscorediv.parentElement;
 	var pwfeedback = document.getElementById('pwfeedback');
 	var confpwmatch = document.getElementById('confpwmatch');
 
@@ -176,6 +177,8 @@
 
 		if (newpw != '') {
 			
+			pwscoredivParent.classList.add( 'active' );
+			
 			var ret = zxcvbn( newpw );
 			var testsPassed = testPassword();
 			
@@ -196,6 +199,7 @@
 	
 	
 		} else {
+			pwscoredivParent.classList.remove( 'active' );
 			clearMessages();
 		}
 

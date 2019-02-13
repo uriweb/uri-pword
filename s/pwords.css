@@ -168,14 +168,25 @@
 }
 
 #passwordform legend {
-	background: #555;
-	padding: .5rem .8rem .4rem;
+	background: none;
+	padding: 0 0 5px;
+	color: #000;
+	font-size: 1.25rem;
+	text-transform: initial;
+	letter-spacing: normal;
+	border-bottom: 1px solid #ddd;
+	width: 100%;
+}
+
+#passwordform label {
+	color: #555;
 }
 
 .form-description {
 	font-size: .9rem;
 	padding-top: .5rem;
 	color: #555;
+	line-height: 1rem;
 }
 
 .popup {
@@ -261,8 +272,6 @@ div.none {
 
 #confpwmatch {
 	display: block;
-	margin-bottom: 1em;
-	padding: .5em;
 }
 
 .pwscore1, .pwscore2, .pwscore3 {
@@ -297,10 +306,11 @@ div#pwscorediv.pwscore4 {
 
 .feedback {
 	font-size: .9rem;
-	padding: 1rem 0;
+	padding: 1rem 0 0;
 }
 
 .feedback.score {
+	display: none;
 	position: relative;
 	top: .5rem;
 	width: 100%;
@@ -308,8 +318,12 @@ div#pwscorediv.pwscore4 {
 	padding: 0;
 }
 
+.feedback.score.active {
+	display: block;
+}
+
 #pwscorediv, #pwfeedback {
-	display: none;
+	display: block;
 }
 
 #pwscorediv {
@@ -358,11 +372,6 @@ div#pwscorediv.pwscore4 {
 	border-style: solid;
 	border-color: #ddd;
 	margin: 0;
-}
-
-#newpw:focus ~ .feedback.score #pwscorediv.pwscore,
-#newpw:focus ~ .feedback.score #pwscorediv.pwscore ~ #pwfeedback {
-	display: block;
 }
 
 .yes {

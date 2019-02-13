@@ -204,7 +204,7 @@ function send_to_server($fields)
 			<label for="user">Your URI Email Address:</label>
 			<input type="text" id="user" name="user" placeholder="sample@uri.edu" size="40" maxlength="64" <?php echo $user_value; ?> />
 			<div class="form-description">
-				Enter your full URI email address (e.g. sample@uri.edu or sample@my.uri.edu)
+				Your URI email address (e.g. sample@uri.edu or sample@my.uri.edu)
 			</div>
 		</div>
 
@@ -212,7 +212,7 @@ function send_to_server($fields)
 			<label for="currpw">Enter Current Password:</label>
 			<input type="password" id="currpw" name="currpw" size="33" maxlength="32" <?php echo $currpw_value; ?> />
 			<div class="form-description">
-				Note: if you have not yet unified your passwords, enter your Sakai/Wifi/LDAP password here.
+				Your URI password (previously called your Sakai password)
 			</div>
 		</div>
 	
