@@ -372,34 +372,11 @@ div#pwscorediv.pwscore4 {
 	color: #900;
 }
 
-
-input#submitbutton { 
-	display: inline-block;
-	margin: 0 .5rem;
-	padding: 1rem 2rem;
-	border: 1px solid #ddd;
-	font-size: .7rem;
-	font-weight: 600;
-	letter-spacing: .1rem;
-	text-transform: uppercase;
-	text-align: center;
-	color: #999;
-	text-decoration: none;
-	border-radius: .2rem;
-	-webkit-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
-	border: 1px solid #ddd;
-	text-shadow: none;
-}
-input#submitbutton.pass { 
-	background-color: #005eff;
-	border: 1px solid #005eff;
-	color: #fff;
-}
-input#submitbutton.fail { 
-	background-color: transparent;
-	border: 1px solid #ddd;
-	color: #999;
+#submitbutton:matches([disabled="true"]) { 
+	background: transparent;
+	border: 1px solid #ddd !important;
+	color: #999 !important;
+	cursor: initial;
 }
 div#help_contact { 
 	font-size: 90%; 
