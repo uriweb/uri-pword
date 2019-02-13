@@ -120,10 +120,10 @@
 		var b = document.getElementById('submitbutton');
 	
 		if ( strong && match ) { 
-			b.disabled = false;
 			b.className = 'pass';
+			b.setAttribute('disabled', false);
 		} else {
-			b.disabled = true;
+			b.setAttribute('disabled', true);
 			b.className = 'fail';
 		}
 	}

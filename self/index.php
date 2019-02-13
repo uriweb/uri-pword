@@ -257,7 +257,7 @@ function send_to_server($fields)
 			</div>
 		</div>
 
-		<input type="submit" name="submit_form" value="Submit" id="submitbutton" class='fail' disabled>
+		<input type="submit" name="submit_form" value="Submit" id="submitbutton" class="pass" />
 
 	</fieldset>
 
