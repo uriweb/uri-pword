@@ -86,8 +86,7 @@ if (isset($_REQUEST['submit_form'])) {
 
   // Get messages ready for display
   if (count($messages) > 0) {
-    $message_str =
-        '<center><p>' . join("</p>\n<p>", $messages) . "</p></center>\n";
+    $message_str = '<p>' . join("</p>\n<p>", $messages) . "</p>\n";
   }
 
   // If failed, retain the text fields and present any messages in red
@@ -114,7 +113,7 @@ if (strlen($message_str) > 0) {
         $message_class = "none";
 }
 
-$message_str = '<div class="' . $message_class . '"><b>' . $message_str . "</b></div>";
+$message_str = '<div class="' . $message_class . '"><strong>' . $message_str . "</strong></div>";
 
 function send_to_server($fields)
 {
