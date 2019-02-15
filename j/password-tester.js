@@ -120,11 +120,14 @@
 	 */
 	function setSubmitStatus() {
 		var b = document.getElementById('submitbutton');
+
+		b.className = b.className.replace(new RegExp('(\\s|^)disabled(\\s|$)'), ' ');			
 	
 		if ( strong && match ) { 
 			b.setAttribute('disabled', false);
 		} else {
 			b.setAttribute('disabled', true);
+			b.className = b.className + ' ' + 'disabled';
 		}
 	}
 
