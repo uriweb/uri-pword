@@ -221,3 +221,9 @@ a:hover, a:visited, a { color: #07f; }
 	padding-top: 2rem;
 }
 
+/** IE 10 #SAD **/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	main {
+		display: block;
+	}
+}
