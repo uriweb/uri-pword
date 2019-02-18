@@ -250,25 +250,24 @@
 
 /* VALIDATION */
 
-div.error { 
-	border: 3px solid #900; 
-	background-color: #fdd; 
-	color: #600; 
-	padding: 0.25em; 
-	margin: 1em;
+div.error, div.message, div.success {
+	border: 1px solid #ddd;
+	border-radius: .2rem;
+	padding: 0.5em 1em;
+	margin: 0 0 1rem;
 }
-
-div.success { 
-	border: 3px solid #090; 
-	background-color: #dfd; 
+div.error {
+	border-color: #900;
+	background-color: #fdd;
+	color: #600;
+}
+div.success {
+	border-color: #090;
+	background-color: #dfd;
 	color: #060;
-	padding: 0.25em;
-	margin: 1em;
 }
+div.none { display: none; }
 
-div.none { 
-	display: none;
-}
 
 #confpwmatch {
 	display: block;
@@ -387,6 +386,14 @@ div#pwscorediv.pwscore4 {
 	color: #999 !important;
 	cursor: initial;
 }
+.disabled {
+	background: transparent !important;
+	cursor: default !important;
+}
+.disabled:hover {
+	background: transparent !important;
+	cursor: default !important;
+}
 div#help_contact { 
 	font-size: 90%; 
 	font-weight: bold; 
@@ -400,3 +407,9 @@ div#help_contact {
 	padding-top: 2rem;
 }
 
+/** IE 10 #SAD **/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	main {
+		display: block;
+	}
+}
