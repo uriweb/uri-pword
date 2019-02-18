@@ -11,7 +11,6 @@
 	overflow-x: hidden;
 	background: #fff;
 	border-bottom: 1px solid #eee;
-	margin: 0 auto 3rem;
 	padding: 2rem 0 0;
 }
 
@@ -139,6 +138,7 @@
 		left: 0;
 		border: 1px solid #eee;
 		border-radius: 3px;
+		margin: 0 auto 3rem;
 	}
 	#pword-form fieldset {
 		padding: 2rem 4rem;
