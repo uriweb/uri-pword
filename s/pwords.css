@@ -121,6 +121,7 @@ input[type="submit"] {
 
 #pword-form label {
 	max-width: initial !important;
+	white-space: nowrap;
 }
 
 #pword-form h3 {
