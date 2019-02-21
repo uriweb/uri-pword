@@ -4,6 +4,12 @@
 
 /* SELECT FORM STYLES */
 
+input[type="submit"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
 #pword-form {
 	width: 100%;
 	position: relative;
