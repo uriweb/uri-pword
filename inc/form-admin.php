@@ -6,7 +6,7 @@
 ?>
 
 
-<form class="modern-form" method="post" enctype="multipart/form-data" onkeypress="return event.keyCode != 13;">
+<form id="passwordform" class="modern-form" method="post" enctype="multipart/form-data" onkeypress="return event.keyCode != 13;">
 	<fieldset>
 		<legend>Administration</legend>
 		
