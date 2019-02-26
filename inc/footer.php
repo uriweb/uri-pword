@@ -1,5 +1,5 @@
 <hr>
-<p><small>Questions/Issues? Contact the <a href='https://web.uri.edu/itservicedesk/'>IT Service Desk</a> 401-874-4357</small></p>
+<p><small>Questions? Issues? Contact the <a href='https://web.uri.edu/itservicedesk/'>IT Service Desk</a> 401-874-4357</small></p>
 
 <!-- ===================== DO NOT CHANGE ANYTHING BELOW THIS LINE ===================== -->
 

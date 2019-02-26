@@ -164,7 +164,8 @@ $page_title = 'Self-Serve Password Change';
 $display_title = 'Self-Serve Password Change';
 $display_description = 'Information and Technology Services';
 
-$breadcrumbs[] = array('href' => $base_path, 'text' => 'Password Reset');
+// add the root password change to the breadcrumb
+$breadcrumbs[] = array('href' => $base_path, 'text' => 'Password Change');
 
 include_once('../inc/header.php');
 
