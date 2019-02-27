@@ -10,8 +10,6 @@
 
 <hr>
 
-<?php echo $message_str; ?> 
-
 <form class="modern-form" id='passwordform' method="post" enctype="multipart/form-data" onkeypress="return event.keyCode != 13;">
 	<fieldset>
 		<legend>Enter your URI Credentials</legend>

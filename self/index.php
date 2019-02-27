@@ -175,6 +175,8 @@ include_once('../inc/header.php');
 		<header class="entry-header">
 			<h1 class="entry-title">Change Your URI Password</h1>
 		</header>
+
+		<?php echo $message_str; ?> 
 		
 		<?php if ( $status ) {
 		
