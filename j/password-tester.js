@@ -124,7 +124,7 @@
 		b.className = b.className.replace(new RegExp('(\\s|^)disabled(\\s|$)'), ' ');			
 	
 		if ( strong && match ) { 
-			b.setAttribute('disabled', false);
+			b.removeAttribute('disabled');
 		} else {
 			b.setAttribute('disabled', true);
 			b.className = b.className + ' ' + 'disabled';
