@@ -37,7 +37,7 @@
 		
 		<div class="form-row">
 			<label for="adminpw">Administrator's Password:</label>
-			<input type="password" name="adminpw"id="adminpw" size="30" maxlength="120" <?php echo $adminpw_value; ?> />
+			<input type="password" name="adminpw"id="adminpw" size="30" maxlength="120" <?php echo $adminpw_value; ?> autocomplete="off" />
 		</div>
 
 	</fieldset>
@@ -69,7 +69,7 @@
 
 		<div class="form-row">
 			<label for="newpw">New Password:</label>
-			<input type="password" id='newpw' name="newpw" size="33" maxlength="32" <?php echo $newpw_value; ?> />
+			<input type="password" id='newpw' name="newpw" size="33" maxlength="32" <?php echo $newpw_value; ?> autocomplete="off" />
 			<div class="form-description"></div>
 			<div class="feedback score">
 				<div id='pwscorediv'>
@@ -81,7 +81,7 @@
 
 		<div class="form-row">
 			<label for="confpw">Repeat New Password:</label>
-			<input type="password" id='confpw' name="confpw" size="33" maxlength="32" <?php echo $confpw_value; ?> />
+			<input type="password" id='confpw' name="confpw" size="33" maxlength="32" <?php echo $confpw_value; ?> autocomplete="off" />
 			<div class="form-description"></div>
 			<div class="feedback match">
 				<span id='confpwmatch'></span>

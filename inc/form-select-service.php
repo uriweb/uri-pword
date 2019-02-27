@@ -9,7 +9,7 @@
 		<div class="entry-content">
 			
 			<div class="breakout">
-				<form class="modern-form" id="pword-form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+				<form class="modern-form" id="pword-form" action="<?php echo $base_path; ?>" method="post">
 					<!-- <img src="src/service-desk.jpg" alt="a man offering technical support" /> -->
 					<h1>Change your password</h1>
 					<div class="form-slider">

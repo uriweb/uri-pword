@@ -26,7 +26,7 @@
 
 		<div class="form-row">
 			<label for="currpw">Enter Current Password:</label>
-			<input type="password" id="currpw" name="currpw" size="33" maxlength="32" <?php echo $currpw_value; ?> />
+			<input type="password" id="currpw" name="currpw" size="33" maxlength="32" <?php echo $currpw_value; ?> autocomplete="off" />
 			<div class="form-description">
 				Your URI password (previously called your Sakai password)
 			</div>
@@ -55,7 +55,7 @@
 		
 		<div class="form-row">
 			<label for="newpw">Choose A New Password:</label>
-			<input type="password" id='newpw' name="newpw" size="33" maxlength="32" <?php echo $newpw_value; ?> />
+			<input type="password" id='newpw' name="newpw" size="33" maxlength="32" <?php echo $newpw_value; ?> autocomplete="off" />
 			<div class="form-description"></div>
 			<div class="feedback score">
 				<div id='pwscorediv'>
@@ -66,7 +66,7 @@
 		</div>
 		<div class="form-row">
 			<label for="confpw">Enter Your New Password Again:</label>
-			<input type="password" id='confpw' name="confpw" size="33" maxlength="32" <?php echo $confpw_value; ?> />
+			<input type="password" id='confpw' name="confpw" size="33" maxlength="32" <?php echo $confpw_value; ?> autocomplete="off" />
 			<div class="form-description"></div>
 			<div class="feedback match">
 			<span id='confpwmatch'></span>
