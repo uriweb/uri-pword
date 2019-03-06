@@ -191,7 +191,7 @@
 
 			match = passwordsMatch();
 			
-			if( testsPassed >= 3 && ret.score > 3) {
+			if( testsPassed >= 3 && ret.score >= 3) {
 				strong = true;
 			}
 	
